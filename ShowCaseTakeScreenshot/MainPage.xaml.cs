@@ -35,12 +35,16 @@ namespace ShowCaseTakeScreenshot
 
         async private void ScreenshotBtn_Click(object sender, RoutedEventArgs e)
         {
+            ScreenshotBtn.IsEnabled = false;
+
             //Create the file you want to save your screenshot
             var photo = await photoStorage.CreateFileAsync("MyScreenshot.jpg", CreationCollisionOption.ReplaceExisting);
 
             RenderTargetBitmap bitmap = new RenderTargetBitmap();
             //Render the Page
-            await bitmap.RenderAsync(MyPage);
+            var width =(int) Math.Floor(MyPage.ActualWidth);
+            var height = (int) Math.Floor(MyPage.ActualHeight);
+            await bitmap.RenderAsync(MyPage, width, height);
             
             MyImage.Source = bitmap;
 
@@ -54,7 +58,11 @@ namespace ShowCaseTakeScreenshot
             var encoder = await BitmapEncoder.CreateAsync(encoderId, randomaccessstream);
 
             encoder.SetPixelData(BitmapPixelFormat.Rgba8, BitmapAlphaMode.Straight, (uint)bitmap.PixelWidth, (uint)bitmap.PixelHeight, 96, 96, bytearray);
-            await encoder.FlushAsync();            
+            await encoder.FlushAsync();
+            await randomaccessstream.FlushAsync();
+            randomaccessstream.Dispose();
+
+            ScreenshotBtn.IsEnabled = true;
         }
     }
 }
