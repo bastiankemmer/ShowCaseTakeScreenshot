@@ -39,8 +39,8 @@ namespace ShowCaseTakeScreenshot
             var photo = await photoStorage.CreateFileAsync("MyScreenshot.jpg", CreationCollisionOption.ReplaceExisting);
 
             RenderTargetBitmap bitmap = new RenderTargetBitmap();
-            //Render the outer Grid
-            await bitmap.RenderAsync(MyOuterGrid);
+            //Render the Page
+            await bitmap.RenderAsync(MyPage);
             
             MyImage.Source = bitmap;
 
