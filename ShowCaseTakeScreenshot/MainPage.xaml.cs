@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
+using Windows.Phone.UI.Input;
 using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -31,6 +32,12 @@ namespace ShowCaseTakeScreenshot
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            HardwareButtons.BackPressed += GetOutOfHere;
+        }
+
+        private void GetOutOfHere(object sender, object e)
+        {
+            App.Current.Exit();
         }
 
         async private void ScreenshotBtn_Click(object sender, RoutedEventArgs e)
