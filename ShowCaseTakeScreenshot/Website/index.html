@@ -5,62 +5,12 @@
     
     <link rel="stylesheet" type="text/css" href="css/mycss.css">
 
-<title>pickIt</title>
+<title>ShowCase</title>
 </head>
-<body>
-
-    <p>Speech to Text</p>
-	<input type="text" id="STT">
-	<input type="button" value="get Text" onclick="Media.getSpeechToText()">
-
-	<p>Text to Speech</p>
-	<input type="text" id="TTS" name="TextToSpeech">
-	<input type="button" value="TTS_btn" onclick="Media.textToSpeech(TextToSpeech.value)">
-	
-	<p>Vibriere in Miliskunden</p>
-	<input type="number" name="Vibrate">
-	<input type="button" value="Vibrieren" onclick="Device.vibrate(Vibrate.value)">
-	
-	<p>Take a Picture</p>
-	<input type="text" id="takePicture">
-	<input type="button" value="takePicture" onclick="Media.takePicture()">
-	<br/>
-	<input type="button" value="Say Picture Name And Take Picture" onclick="Media.takePictureWithName()">
-	
-	<p>Scan Barcode</p>
-	<input type="text" id="scanBarcode">
-	<select id = "scanMode">
-       <option value = "">All</option>
-       <option value = "PRODUCT_MODE">PRODUCT_MODE</option>
-       <option value = "ONE_D_MODE">ONE_D_MODE</option>
-       <option value = "QR_CODE_MODE">QR_CODE_MODE</option>
-       <option value = "DATA_MATRIX_MODE">DATA_MATRIX_MODE</option>
-    </select>
-	<input type="button" value="Scan Barcode" onclick="Media.scanBarcode(document.getElementById('scanMode').value);">
-		
-	<p>Play Video</p>
-	<input type="text" id="videoResult">
-	<select id = "videos">
-       <option value = "PRIVATE">/video/small.mp4</option>
-       <option value = "PUBLIC">small.mp4</option>
-       <option value = "URL">http://techslides.com/demos/sample-videos/small.mp4</option>
-    </select>
-	<input type="button" value="Play Video" onclick="Media.playVideo(document.getElementById('videos').value, document.getElementById('videos').options[ document.getElementById('videos').selectedIndex ].text);">
-
-
-	<p id='wifi'></p>
-	<p id='bluetooth'></p>
-	<p id='battery'></p>
-	<p id='network'></p>
-		
+<body>		
 	<div class="selected">HEY</div>
-	<div>Wie gehts?</div>
-	<div>Sehr gut</div>
-	<div>Auf Wiedersehen!</div>
-		
-	<br/>
-	<div class="newone"><a href="mynewhtml.html">Seite Switchen</a></div>
-	
-	<input type="button" value="Ready" onclick="Device.invoke()">
+	<div>How are you?</div>
+	<div>Fine</div>
+	<div>Goodbye</div>
 </body>
 </html>

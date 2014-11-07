@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
+using Windows.Phone.UI.Input;
 using Windows.Storage;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -44,6 +45,11 @@ namespace ShowCaseTakeScreenshot
             
         }
 
+        private void GetOutOfHere(object sender, object e)
+        {
+            App.Current.Exit();
+        }
+
         async private void TakeScreenshot(object sender, object e)
         {
             //Create the file you want to save your screenshot
@@ -68,8 +74,9 @@ namespace ShowCaseTakeScreenshot
             await encoder.FlushAsync();
             await randomaccessstream.FlushAsync();
             randomaccessstream.Dispose();
-            MessageDialog dialog = new MessageDialog("Hey It works");
+            MessageDialog dialog = new MessageDialog("Hey I took a Screenshot!");
             await dialog.ShowAsync();
+            HardwareButtons.BackPressed += GetOutOfHere;
         }
     }
 }
