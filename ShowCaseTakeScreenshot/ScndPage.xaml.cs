@@ -7,6 +7,7 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
 using Windows.Storage;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -16,37 +17,43 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
+// Die Elementvorlage "Leere Seite" ist unter http://go.microsoft.com/fwlink/?LinkID=390556 dokumentiert.
 
 namespace ShowCaseTakeScreenshot
 {
-    public sealed partial class MainPage : Page
+    /// <summary>
+    /// Eine leere Seite, die eigenständig verwendet werden kann oder auf die innerhalb eines Rahmens navigiert werden kann.
+    /// </summary>
+    public sealed partial class ScndPage : Page
     {
         private readonly StorageFolder photoStorage = KnownFolders.PicturesLibrary;
-        public MainPage()
+        public ScndPage()
         {
             this.InitializeComponent();
-
-            this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
+        /// <summary>
+        /// Wird aufgerufen, wenn diese Seite in einem Frame angezeigt werden soll.
+        /// </summary>
+        /// <param name="e">Ereignisdaten, die beschreiben, wie diese Seite erreicht wurde.
+        /// Dieser Parameter wird normalerweise zum Konfigurieren der Seite verwendet.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            MyWebViewControl.Navigate(new Uri("ms-appx-web:///Website/index.html"));
+            MyWebViewControl.DOMContentLoaded += TakeScreenshot;
+            
         }
 
-        async private void ScreenshotBtn_Click(object sender, RoutedEventArgs e)
+        async private void TakeScreenshot(object sender, object e)
         {
-            ScreenshotBtn.IsEnabled = false;
-
             //Create the file you want to save your screenshot
-            var photo = await photoStorage.CreateFileAsync("MyScreenshot.jpg", CreationCollisionOption.ReplaceExisting);
+            var photo = await photoStorage.CreateFileAsync("MyScreenshot.jpg", CreationCollisionOption.GenerateUniqueName);
 
             RenderTargetBitmap bitmap = new RenderTargetBitmap();
             //Render the Page
-            var width =(int) Math.Floor(MyPage.ActualWidth);
-            var height = (int) Math.Floor(MyPage.ActualHeight);
+            var width = (int)Math.Floor(MyPage.ActualWidth);
+            var height = (int)Math.Floor(MyPage.ActualHeight);
             await bitmap.RenderAsync(MyPage, width, height);
-            
-            MyImage.Source = bitmap;
 
             var buffer = await bitmap.GetPixelsAsync();
             var bytearray = buffer.ToArray();
@@ -61,13 +68,8 @@ namespace ShowCaseTakeScreenshot
             await encoder.FlushAsync();
             await randomaccessstream.FlushAsync();
             randomaccessstream.Dispose();
-
-            ScreenshotBtn.IsEnabled = true;
-        }
-
-        private void Navigate_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(ScndPage));
+            MessageDialog dialog = new MessageDialog("Hey It works");
+            await dialog.ShowAsync();
         }
     }
 }

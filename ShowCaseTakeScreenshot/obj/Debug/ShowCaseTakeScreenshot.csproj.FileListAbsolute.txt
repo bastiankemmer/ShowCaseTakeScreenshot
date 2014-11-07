@@ -30,3 +30,8 @@ c:\users\b001\documents\visual studio 2013\Projects\ShowCaseTakeScreenshot\ShowC
 c:\users\b001\documents\visual studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\obj\Debug\qualifiers.txt.intermediate
 c:\users\b001\documents\visual studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 c:\users\b001\documents\visual studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\obj\Debug\ProjectArchitectures.txt
+C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\bin\Debug\ScndPage.xbf
+C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\obj\Debug\ScndPage.g.i.cs
+C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\obj\Debug\ScndPage.g.cs
+C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\obj\Debug\ScndPage.xaml
+C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\obj\Debug\ScndPage.xbf

@@ -1,0 +1,36 @@
+html, body {
+                    height: 100%;
+                    width: 100%;
+                    margin: 0px;
+                    padding: 0px;
+                    -ms-user-select:none;
+                }
+
+                body {
+                    font-size: 11pt;
+                    font-family: "Segoe WP";
+                    letter-spacing: 0.02em;
+                    background-color: #000000;
+                    color: #ffffff;
+                    margin-left: 24px;
+                    margin-top: 26px;
+                }
+
+                div {
+                    margin-top: 30px;
+                    font-size: 25pt;
+                    border: 5px dotted red;
+                }
+
+                .selected {
+                    background-color: #58ACFA;
+                    font-size: 40pt;
+                }
+                
+                .inputButton{
+                    font-size: 60pt;
+                }
+                
+                input {
+                    font-size: 25pt;
+                }

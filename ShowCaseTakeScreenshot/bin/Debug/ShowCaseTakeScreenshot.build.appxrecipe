@@ -43,11 +43,20 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\Website\css\mycss.css">
+      <PackagePath>Website\css\mycss.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\Website\index.html">
+      <PackagePath>Website\index.html</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\bin\Debug\ScndPage.xbf">
+      <PackagePath>ScndPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\B001\Documents\Visual Studio 2013\Projects\ShowCaseTakeScreenshot\ShowCaseTakeScreenshot\bin\Debug\ShowCaseTakeScreenshot.xr.xml">
       <PackagePath>ShowCaseTakeScreenshot.xr.xml</PackagePath>

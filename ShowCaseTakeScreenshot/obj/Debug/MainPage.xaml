@@ -10,8 +10,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Name="MyOuterGrid">
+        <Button x:ConnectionId='1' Name="Navigate" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Page2"                       />
         <Image Name="MyImage" Height="250" Width="250" VerticalAlignment="Top" HorizontalAlignment="Center"/>
-        <Button x:ConnectionId='1' Content="Take a Screenshot" Name="ScreenshotBtn"                             VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:ConnectionId='2' Content="Take a Screenshot" Name="ScreenshotBtn"                             VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox Name="MyTextbox" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="305" Height="150" FontSize="35" Margin="48,0,47,9"/>
     </Grid>
 </Page>
