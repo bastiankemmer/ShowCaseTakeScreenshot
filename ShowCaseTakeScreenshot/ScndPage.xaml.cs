@@ -70,6 +70,7 @@ namespace ShowCaseTakeScreenshot
             var encoderId = BitmapEncoder.JpegEncoderId;
             var encoder = await BitmapEncoder.CreateAsync(encoderId, randomaccessstream);
 
+            //Issue Number 1 states that Rgba8 probably has to be Bgra8. Can't confirm it.
             encoder.SetPixelData(BitmapPixelFormat.Rgba8, BitmapAlphaMode.Straight, (uint)bitmap.PixelWidth, (uint)bitmap.PixelHeight, 96, 96, bytearray);
             await encoder.FlushAsync();
             await randomaccessstream.FlushAsync();
